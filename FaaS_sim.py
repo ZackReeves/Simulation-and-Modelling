@@ -38,7 +38,7 @@ class g:
     no_trials = 5 # repeats each model this many times
     sim_duration = 60*60*24 # runs sim for this many simulated seconds
     f = 10861 # no. functions
-    cold_start = 0.5 #c old start rate
+    cold_start = 0.5 #cold start rate
     avg_service_times, weights, sum_lam = parse_csv('trace-final.csv')
     
 
@@ -223,7 +223,7 @@ ax2 = fig.add_subplot(122)
 for run in range(g.no_runs):
     m = 40 + run * 5
 
-    #creates a cdv file for each size of m simulated and writes coloumn headers
+    #creates a csv file for each size of m simulated and writes coloumn headers
     file_name = f'sim_out/trial_results_{m}.csv'
 
     with open(file_name, "w") as f:
